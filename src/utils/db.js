@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const signale = require('signale');
 
 const config = require('../config');
 
@@ -7,7 +8,7 @@ module.exports = () =>
     // Create the database connection
     mongoose.connect(`mongodb://root:password@${config.DB_HOST}`);
     mongoose.connection.on('connected', () => {
-      console.log('Mongoose default connection opened');
+      signale.success('Mongoose default connection opened');
       resolve();
     });
     // If the connection throws an error
@@ -16,14 +17,14 @@ module.exports = () =>
     });
     // When the connection is disconnected
     mongoose.connection.on('disconnected', () => {
-      console.log('Mongoose default connection disconnected');
+      signale.fatal('Mongoose default connection disconnected');
       const err = 'connection closed to db';
       throw err;
     });
     // If the Node process ends, close the Mongoose connection
     process.on('SIGINT', () => {
       mongoose.connection.close(() => {
-        console.log(
+        signale.fatal(
           'Mongoose default connection disconnected through app termination'
         );
         process.exit(0);

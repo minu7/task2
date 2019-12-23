@@ -19,6 +19,7 @@ const corsMiddleware = require('./middlewares/cors');
 // Routers
 const authenticationRouter = require('./api/authentication');
 const cryptoRouter = require('./api/crypto');
+const adminRouter = require('./api/admin');
 // for inserting cryptoPrice
 const CryptoPrice = require('./model/CryptoPrice');
 const User = require('./model/User');
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 
 app.use('/auth', authenticationRouter);
 app.use('/crypto', cryptoRouter);
+app.use('/admin', adminRouter);
 
 // once the successfull connection to db
 startDbConnection().then(() => {
