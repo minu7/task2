@@ -4,8 +4,8 @@ Docker is needed to start the server.
 2. ``` cd task2 ```
 3. ``` docker-compose run node yarn install ```
 4. ``` docker-compose up ```
-5. when all services was started ``` ./configure-cluster.sh ```
-6. then ``` start-server.sh ```
+5. when all services was started opening a new terminal tab ``` ./configure-cluster.sh ```
+6. then ``` ./start-server.sh ```
 
 # Verify cluster and sharding
 The cluster start the sharding when the storage size reach 3 MB
