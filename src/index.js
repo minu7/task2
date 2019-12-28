@@ -15,6 +15,7 @@ const config = require('./config');
 const startDbConnection = require('./utils/db');
 // Middlewares
 const tokenDecrypt = require('./utils/tokenDecrypt');
+const createAdmin = require('./utils/createAdmin');
 const corsMiddleware = require('./middlewares/cors');
 // Routers
 const authenticationRouter = require('./api/authentication');
@@ -58,6 +59,7 @@ app.use('/admin', adminRouter);
 
 // once the successfull connection to db
 startDbConnection().then(() => {
+  createAdmin();
   const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=ALL');
   pricesWs.onmessage = data => {
     const prices = JSON.parse(data.data);

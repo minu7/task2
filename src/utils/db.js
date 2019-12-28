@@ -6,7 +6,7 @@ const config = require('../config');
 module.exports = () =>
   new Promise(resolve => {
     // Create the database connection
-    mongoose.connect(`mongodb://root:password@${config.DB_HOST}`);
+    mongoose.connect(`mongodb://${config.DB_HOST}/app`);
     mongoose.connection.on('connected', () => {
       signale.success('Mongoose default connection opened');
       resolve();

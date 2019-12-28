@@ -20,4 +20,4 @@ const schema = new mongoose.Schema({
 
 schema.index({ crypto: 1, createdAt: -1 });
 
-module.exports = mongoose.model('CriptoPrices', schema);
+module.exports = mongoose.model('CryptoPrices', schema);
