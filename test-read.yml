@@ -1,0 +1,59 @@
+config:
+  target: "http://localhost"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      rampTo: 100
+  variables:
+    crypto:
+      - '0chain'
+      - '0x'
+      - 'ripple'
+      - 'bitcoin'
+      - 'aventus'
+      - 'axpire'
+      - 'b2bcoin'
+      - 'b2bx'
+      - 'b2g'
+      - 'baasid'
+      - 'babb'
+      - 'baer-chain'
+      - 'banca'
+      - 'bancor'
+      - 'bankera'
+      - 'bankex'
+      - 'basic-attention-token'
+      - 'bata'
+      - 'bcim'
+      - 'bdsg'
+      - 'beam'
+      - 'bec'
+      - 'betterbetting'
+      - 'bezant'
+      - 'bezop'
+      - 'bibox-token'
+      - 'bigbom'
+      - 'binance-coin'
+      - 'biocoin'
+      - 'biotron'
+      - 'bit-tube'
+      - 'bit-z-token'
+      - 'bitbar'
+      - 'bitcapitalvendor'
+      - 'bitcoin'
+      - 'bitcoin-cash'
+      - 'bitcoin-diamond'
+      - 'bitcoin-file'
+      - 'bitcoin-god'
+      - 'bitcoin-gold'
+      - 'bitcoin-interest'
+      - 'bitcoin-scrypt'
+      - 'bitcoin-sv'
+      - 'bitcoinx'
+      - 'bitcoinz'
+
+scenarios:
+  - name: "Read"
+    flow:
+      - get:
+          url: "/test/read/{{ crypto }}"
