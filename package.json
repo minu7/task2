@@ -34,7 +34,7 @@
     "qs": "^6.9.1",
     "run-sequence": "^2.2.1",
     "signale": "^1.4.0",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "winston": "^3.2.1",
     "ws": "^7.2.1"
   }
