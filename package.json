@@ -31,7 +31,7 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.1",
     "passport-http-bearer": "^1.0.1",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "run-sequence": "^2.2.1",
     "signale": "^1.4.0",
     "socket.io": "^2.3.0",
